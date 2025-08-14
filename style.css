@@ -1,0 +1,131 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fundo e tipografia */
+body {
+  background-color: rgb(57, 57, 189);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px;
+  color: #222;
+}
+
+/* Cartão principal */
+.container {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+
+/* Títulos e textos */
+h1 {
+  background-color: rgb(25, 192, 225);
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+
+p.lead {
+  /* use uma classe no p introdutório */
+  max-width: 100%;
+  background-color: rgb(159, 171, 35);
+  text-align: center;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 0 auto 16px auto;
+  color: #111;
+}
+
+/* Campo + botão */
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+input#inputTarefa {
+  flex: 1;
+  min-width: 0; /* evita overflow em telas pequenas */
+  background-color: #fff;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color .2s;
+}
+
+input#inputTarefa:focus {
+  border-color: rgb(25, 192, 225);
+}
+
+#buttonTarefa {
+  background-color: #a3e635; /* greenyellow mais suave */
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .05s ease, filter .2s ease;
+}
+
+#buttonTarefa:hover { filter: brightness(0.95); }
+#buttonTarefa:active { transform: translateY(1px); }
+
+/* Mensagem de feedback */
+#mensagem {
+  text-align: center;
+  font-weight: 700;
+  margin: 8px 0 12px;
+}
+
+/* Lista de tarefas */
+ul#listaTarefas {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+ul#listaTarefas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+
+/* Botão remover dentro do li (se você tiver) */
+ul#listaTarefas li .remove {
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+ul#listaTarefas li .remove:hover { filter: brightness(0.95); }
+
+/* Responsividade básica */
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+  }
+  #buttonTarefa {
+    width: 100%;
+  }
+}
